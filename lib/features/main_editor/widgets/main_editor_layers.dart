@@ -213,22 +213,23 @@ class _MainEditorLayersState extends State<MainEditorLayers> {
         child: ValueListenableBuilder(
             valueListenable: _deferId,
             builder: (_, deferId, __) {
-              return DeferredPointerHandler(
-                id: deferId,
-                selectedLayerId: widget.layerInteractionManager.selectedLayerId,
-                child: StreamBuilder(
-                  stream: widget.controllers.uiLayerCtrl.stream,
-                  builder: (context, snapshot) {
-                    return Stack(
-                      children: widget.activeLayers
-                          .asMap()
-                          .entries
-                          .map(_buildLayerWidget)
-                          .toList(),
-                    );
-                  },
-                ),
-              );
+              return Container();
+              // return DeferredPointerHandler(
+              //   id: deferId,
+              //   selectedLayerId: widget.layerInteractionManager.selectedLayerId,
+              //   child: StreamBuilder(
+              //     stream: widget.controllers.uiLayerCtrl.stream,
+              //     builder: (context, snapshot) {
+              //       return Stack(
+              //         children: widget.activeLayers
+              //             .asMap()
+              //             .entries
+              //             .map(_buildLayerWidget)
+              //             .toList(),
+              //       );
+              //     },
+              //   ),
+              // );
             }),
       ),
     );
