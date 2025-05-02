@@ -124,7 +124,7 @@ class MainEditorInteractiveContent extends StatelessWidget {
     return Center(
       child: Stack(
         children: [
-          MainEditorFontPreloader(emojiEditorConfigs: configs.emojiEditor),
+          //  MainEditorFontPreloader(emojiEditorConfigs: configs.emojiEditor),
           Padding(
             padding: isLayerSelected &&
                     configs.layerInteraction.hideToolbarOnInteraction
