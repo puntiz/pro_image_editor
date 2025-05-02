@@ -58,30 +58,30 @@ class MainEditorBackgroundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: heroTag,
-      createRectTween: (begin, end) => RectTween(begin: begin, end: end),
-      child: !isInitialized
-          ? AutoImage(
-              editorImage,
-              fit: BoxFit.contain,
-              width: sizesManager.decodedImageSize.width,
-              height: sizesManager.decodedImageSize.height,
-              configs: configs,
-            )
-          : TransformedContentGenerator(
-              transformConfigs: stateManager.transformConfigs,
-              configs: configs,
-              child: FilteredWidget(
-                filterKey: backgroundImageColorFilterKey,
-                width: sizesManager.decodedImageSize.width,
-                height: sizesManager.decodedImageSize.height,
-                configs: configs,
-                image: editorImage,
-                filters: stateManager.activeFilters,
-                tuneAdjustments: stateManager.activeTuneAdjustments,
-                blurFactor: stateManager.activeBlur,
-              ),
-            ),
-    );
+        tag: heroTag,
+        createRectTween: (begin, end) => RectTween(begin: begin, end: end),
+        // child: !isInitialized?
+        child: AutoImage(
+          editorImage,
+          fit: BoxFit.contain,
+          width: sizesManager.decodedImageSize.width,
+          height: sizesManager.decodedImageSize.height,
+          configs: configs,
+        )
+        // : TransformedContentGenerator(
+        //     transformConfigs: stateManager.transformConfigs,
+        //     configs: configs,
+        //     child: FilteredWidget(
+        //       filterKey: backgroundImageColorFilterKey,
+        //       width: sizesManager.decodedImageSize.width,
+        //       height: sizesManager.decodedImageSize.height,
+        //       configs: configs,
+        //       image: editorImage,
+        //       filters: stateManager.activeFilters,
+        //       tuneAdjustments: stateManager.activeTuneAdjustments,
+        //       blurFactor: stateManager.activeBlur,
+        //     ),
+        //   ),
+        );
   }
 }
